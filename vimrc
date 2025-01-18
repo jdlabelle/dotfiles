@@ -161,3 +161,10 @@ endif
 " solarized dark colorscheme
 set background=dark
 colorscheme solarized
+
+
+" enable file overriding for local customization
+let $LOCALFILE=expand("~/.vimrc_local")
+if filereadable($LOCALFILE)
+    source $LOCALFILE
+endif

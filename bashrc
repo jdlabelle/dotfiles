@@ -122,3 +122,9 @@ fi
 
 # set the keybindings to vi mode.
 # set -o vi
+
+# check the existence of an overriding file
+if [ -f ~/.bashrc_local ]; then
+    source ~/.bashrc_local
+fi
+
