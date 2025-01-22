@@ -97,8 +97,12 @@ set expandtab
 set showmatch
 
 " highlight characters in magenta when line goes over 80-character maximum
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+"highlight ColorColumn ctermbg=magenta
+"call matchadd('ColorColumn', '\%81v', 100)
+
+set cursorline
+
+set colorcolumn=80
 
 " auto-indentation
 set autoindent
@@ -123,6 +127,9 @@ set wildmode=list:longest
 
 " files and directories we want to ignore
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx,*/.git/*,*/tmp/*,*.swp
+
+" yaml specific settings
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " set leader to <space>
 let mapleader=" "
