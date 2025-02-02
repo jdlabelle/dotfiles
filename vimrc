@@ -82,7 +82,7 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 
 " the width of a tab is set to 4
-set tabstop=4 
+set tabstop=4
 
 " indents will have a width of 4
 set shiftwidth=4
@@ -96,10 +96,6 @@ set expandtab
 " show matching brackets
 set showmatch
 
-" highlight characters in magenta when line goes over 80-character maximum
-"highlight ColorColumn ctermbg=magenta
-"call matchadd('ColorColumn', '\%81v', 100)
-
 set cursorline
 
 set colorcolumn=80
@@ -107,14 +103,11 @@ set colorcolumn=80
 " auto-indentation
 set autoindent
 
-" turn on filetype detection
-filetype on
+" enable filetype detection, plugins, and indentation
+filetype plugin indent on
 
-" enable plugins and load plugin for the detected file type 
-filetype plugin on
-
-" load an indent file for the detected file type
-filetype indent on
+" non-python filetype specific settings
+autocmd FileType yaml,json,javascript,html,css setlocal ts=2 sts=2 sw=2 expandtab
 
 " set the commands to save in history default number is 20
 set history=1000
@@ -127,9 +120,6 @@ set wildmode=list:longest
 
 " files and directories we want to ignore
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx,*/.git/*,*/tmp/*,*.swp
-
-" yaml specific settings
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " set leader to <space>
 let mapleader=" "
@@ -169,6 +159,23 @@ endif
 set background=dark
 colorscheme solarized
 
+"declare specific linters for ALE
+let g:ale_linters = {
+\   'python': ['ruff'],
+\}
+
+" declare fixers
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
+
+" ALE customization settings
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_fix_on_save = 1
 
 " enable file overriding for local customization
 let $LOCALFILE=expand("~/.vimrc_local")
