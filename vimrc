@@ -177,6 +177,15 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_fix_on_save = 1
 
+
+" Generate plugin help documentation automatically
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
+
+
 " enable file overriding for local customization
 let $LOCALFILE=expand("~/.vimrc_local")
 if filereadable($LOCALFILE)
