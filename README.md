@@ -19,6 +19,4 @@ $ ./install
 
 3. If there are new versions of plugins available, run `git submodule update --init --remote` to upgrade to the latest version.
 
-4. Don't forget to manually add the plugin help documentation to vim by running `:helptags ~/.vim/pack/vendor/start/<plugin>/doc`.
-
-5. Make local customizations: create `~/.vimrc_local` or similar and add any specific changes or customizations for the local machine, they will be sourced at the end of the main config file.
+4. Make local customizations: create `~/.vimrc_local` or similar and add any specific changes or customizations for the local machine, they will be sourced at the end of the main config file.
