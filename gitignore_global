@@ -1,0 +1,12 @@
+##
+# Common
+*~
+.DS_Store
+.netrwhist
+
+# swap
+[._]*.sw[a-z]
+[._]sw[a-z]
+
+# Python
+.venv

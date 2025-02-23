@@ -1,0 +1,20 @@
+[alias]
+	graph = log --all --graph --decorate --oneline
+	lv = log --all --graph --decorate
+
+[init]
+	defaultBranch = main
+
+[merge]
+    tool = vimdiff
+
+[user]
+	email = labelljd@gmail.com
+	name = Joshua LaBelle
+
+[github]
+    user = jdlabelle
+
+[core]
+	editor = vim
+	excludesFile = ~/.gitignore_global
