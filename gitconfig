@@ -4,12 +4,12 @@
 [init]
 	defaultBranch = main
 [merge]
-    tool = vimdiff
+	tool = vimdiff
 [user]
 	email = labelljd@gmail.com
 	name = Joshua LaBelle
 [github]
-    user = jdlabelle
+	user = jdlabelle
 [core]
 	editor = vim
 	excludesFile = ~/.gitignore_global
