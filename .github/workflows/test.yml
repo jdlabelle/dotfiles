@@ -2,10 +2,9 @@ on:
   push:
     branches:
       - 'main'
-    paths:
-      - '**.sh'
+  pull_request:
 
-name: "Trigger: Push action"
+name: "CI/Test"
 permissions: {}
 
 jobs:
@@ -25,3 +24,12 @@ jobs:
             dotbot
             vim
           ignore_names: bashrc
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: |
+          mkdir -p ~/dotfiles-install-dir
+      - run: |
+          HOME=~/dotfiles-install-dir ./install
