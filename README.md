@@ -1,4 +1,4 @@
-# Dotfiles [![CI test and build status](https://github.com/jdlabelle/dotfiles/actions/workflows/CI/badge.svg)](https://github.com/jdlabelle/dotfiles/actions/workflows/ci.yml)
+# Dotfiles [![CI test and build status](https://github.com/jdlabelle/dotfiles/actions/workflows/ci.yml/badge.svg)](https://github.com/jdlabelle/dotfiles/actions/workflows/ci.yml)
 
  First iteration of my personal dotfiles and slowly adding. Sticking to Vim 8.0's built-in package management system, and using git submodules to manage my plugins and dependencies. At some point I'll be giving NVIM a go.
 
