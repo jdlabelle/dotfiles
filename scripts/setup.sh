@@ -2,7 +2,7 @@
 
 # Install apps
 
-apps=("vim" "tree" "git" "ripgrep" "make" "tmux" "shellcheck" "curl")
+apps=("vim" "tree" "git" "ripgrep" "make" "tmux" "shellcheck" "curl" "file" "rsync")
 
 for x in "${apps[@]}"; do
     sudo apt install "$x"
