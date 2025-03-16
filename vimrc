@@ -127,6 +127,9 @@ let mapleader=" "
 " use 'jk' to exit insert mode
 inoremap jk <ESC>
 
+" Shortcut to open netrw from normal mode
+nnoremap <leader>pv :Lexplore<CR>
+
 " easy buffer switching
 nnoremap <leader>n :bn<enter>
 nnoremap <leader>b :bp<enter>
@@ -176,6 +179,12 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_fix_on_save = 1
+
+" remaps so AutoPairs shortcuts work (alt key)
+" fast wrap
+imap <Esc>e <M-e>
+" jump to next closed pair
+imap <Esc>n <M-n>
 
 
 " Generate plugin help documentation automatically
