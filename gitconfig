@@ -1,6 +1,17 @@
 [alias]
-	graph = log --all --graph --decorate --oneline
-	lv = log --all --graph --decorate
+    st = status -sb
+    br = branch -vv
+    di = diff
+    dis = diff --stat
+    dc = diff --cached
+    dcs = diff --cached --stat
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    lp = log -p
+    gr = log --all --graph --decorate --oneline
+    lv = log --all --graph --decorate
+    snap = commit -am "Snapshot"
+    update-submodules = submodule update --init --recursive
+    upgrade-submodules = submodule update --init --remote
 [init]
 	defaultBranch = main
 [merge]
