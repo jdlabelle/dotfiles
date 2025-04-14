@@ -1,14 +1,16 @@
 #!/bin/bash
+set -ex
 
-# Install apps
+# Install apps (Ubuntu or Debian focused here, will need to update or provide different script for arch or enterprise)
 
-apps=("vim" "tree" "git" "ripgrep" "make" "tmux" "shellcheck" "curl" "file" "rsync")
+apps=("vim" "tree" "git" "ripgrep" "make" "tmux" "shellcheck" "curl" "file" "rsync" "ninja-build" "gettext" "cmake" "build-essential")
 
 for x in "${apps[@]}"; do
-    sudo apt install "$x"
+    sudo apt-get install "$x"
 done
 
-# install gh per the docs
+
+# install gh per the docs, not sure if I want to keep this
 (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
     && sudo mkdir -p -m 755 /etc/apt/keyrings \
     && out=$(mktemp) && wget -nv -O"$out" https://cli.github.com/packages/githubcli-archive-keyring.gpg \
@@ -17,3 +19,11 @@ done
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
     && sudo apt update \
     && sudo apt install gh -y
+
+# install neovim
+cd ~
+git clone https://github.com/neovim/neovim
+cd neovim
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+cd build && cpack -G DEB && sudo dpkg -i nvim-linux-x86_64.deb
+# can use `sudo make install` if the above line fails
