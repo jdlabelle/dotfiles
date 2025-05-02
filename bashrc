@@ -119,3 +119,5 @@ fi
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
 fi
+
+export GPG_TTY=$(tty)
