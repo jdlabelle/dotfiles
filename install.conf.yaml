@@ -1,8 +1,9 @@
 - defaults:
     link:
+      create: true
       relink: true
 
-- clean: ['~']
+- clean: ['~', '~/.config']
 
 - link:
     ~/.bashrc: bashrc
@@ -12,6 +13,7 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.bash_aliases: bash_aliases
+    ~/.config/zathura/zathurarc: zathurarc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
