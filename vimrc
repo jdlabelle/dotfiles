@@ -158,9 +158,16 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 
-" solarized dark colorscheme
+" set termguicolors (for gruvbox, comment this out if using solarized)
+if (has("termguicolors"))
+    set termguicolors
+endif
+
+" set colorscheme (set terminal colors to solarized if using that colorscheme)
+" two options in my config:
 set background=dark
-colorscheme solarized
+autocmd vimenter * ++nested colorscheme gruvbox
+" colorscheme solarized
 
 "declare specific linters for ALE
 let g:ale_linters = {

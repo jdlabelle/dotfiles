@@ -20,3 +20,6 @@ alias t='tree'
 
 # git
 alias g='git'
+
+# shortcut to notes
+alias oo='nvim ~/wiki/index.md'
