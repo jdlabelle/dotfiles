@@ -103,6 +103,12 @@ set colorcolumn=80
 " auto-indentation
 set autoindent
 
+" open new vertical splits to the right
+set splitright
+
+" open new horizontal splits below
+set splitbelow
+
 " enable filetype detection, plugins, and indentation
 filetype plugin indent on
 
