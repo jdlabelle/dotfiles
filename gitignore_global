@@ -3,6 +3,7 @@
 *~
 .DS_Store
 .netrwhist
+.env
 
 # swap
 [._]*.sw[a-z]
