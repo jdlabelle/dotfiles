@@ -3,7 +3,7 @@ set -ex
 
 # Install apps (Ubuntu or Debian focused here, will need to update or provide different script for arch or enterprise)
 
-apps=("vim" "man" "tree" "wget" "git" "ripgrep" "make" "tmux" "shellcheck" "curl" "file" "rsync" "ninja-build" "gettext" "cmake" "build-essential")
+apps=("vim" "man" "tree" "wget" "git" "xclip" "ripgrep" "make" "tmux" "shellcheck" "curl" "file" "rsync" "ninja-build" "gettext" "cmake" "build-essential")
 
 for x in "${apps[@]}"; do
     sudo apt-get install "$x" -y
