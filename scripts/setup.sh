@@ -6,7 +6,7 @@ set -ex
 apps=("vim" "man" "tree" "wget" "git" "ripgrep" "make" "tmux" "shellcheck" "curl" "file" "rsync" "ninja-build" "gettext" "cmake" "build-essential")
 
 for x in "${apps[@]}"; do
-    sudo apt-get install "$x"
+    sudo apt-get install "$x" -y
 done
 
 
@@ -32,7 +32,7 @@ cd build && cpack -G DEB && sudo dpkg -i nvim-linux-x86_64.deb
 cd ~/Downloads
 wget https://github.com/LuaLS/lua-language-server/releases/download/3.14.0/lua-language-server-3.14.0-linux-x64.tar.gz
 sudo mkdir /opt/lua-language-server/
-tar -xzvf lua-language-server-3.14.0-linux-x64.tar.gz -C /opt/lua-language-server/
+sudo tar -xzvf lua-language-server-3.14.0-linux-x64.tar.gz -C /opt/lua-language-server/
 sudo ln -s /opt/lua-language-server/bin/lua-language-server /usr/local/bin/lua-language-server
 sudo chown -R josh: /opt/lua-language-server/
 lua-language-server --version
@@ -50,4 +50,4 @@ pyright --version
 
 # Set up LaTeX and Zathura 
 # Usually need a restart of host after the zathura install
-sudo apt install texlive texlive-latex-extra texlive-fonts-recommended texlive-lang-english lmodern biber texlive-bibtex-extra latexmk zathura zathura-pdf-poppler
+sudo apt install texlive texlive-latex-extra texlive-fonts-recommended texlive-lang-english lmodern biber texlive-bibtex-extra latexmk zathura zathura-pdf-poppler -y
