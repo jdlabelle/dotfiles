@@ -48,6 +48,12 @@ sudo npm install -g pyright
 sudo npm update -g pyright
 pyright --version
 
-# Set up LaTeX and Zathura 
+# Set up LaTeX and Zathura
 # Usually need a restart of host after the zathura install
 sudo apt install texlive texlive-latex-extra texlive-fonts-recommended texlive-lang-english lmodern biber texlive-bibtex-extra latexmk zathura zathura-pdf-poppler -y
+
+# Install rustup nightly (for blink.cmp)
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+rustup toolchain install nightly
+rustup default nightly
