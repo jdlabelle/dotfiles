@@ -1,0 +1,15 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean:
+    ~/.config:
+      recursive: true
+
+- link:
+    ~/.bashrc_local: arch_hypr/bashrc_local
+    ~/.config/: 
+      glob: true
+      path: arch_hypr/config/**
+      exclude: [ arch_hypr/config/hypr/handle_monitors.sh ]
