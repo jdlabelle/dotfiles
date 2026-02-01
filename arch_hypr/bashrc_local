@@ -1,0 +1,16 @@
+# Save directory for Hyprshot screenshots
+export HYPRSHOT_DIR=/home/josh/files/screenshots/
+
+# Preferred text editor (Yazi)
+export EDITOR=nvim
+
+# Shell wrapper that allows you to change the current working dir when exiting yazi
+# Start yazi with `y` and exit with `q`
+function y() {
+	local tmp
+    tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
