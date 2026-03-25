@@ -3,7 +3,7 @@ set -ex
 
 # Install apps (Ubuntu or Debian focused here, will need to update or provide different script for arch or enterprise)
 
-apps=("vim" "man" "tree" "wget" "git" "xclip" "ripgrep" "make" "tmux" "shellcheck" "curl" "file" "rsync" "ninja-build" "gettext" "cmake")
+apps=("vim" "man" "tree" "wget" "git" "xclip" "ripgrep" "make" "tmux" "shellcheck" "curl" "file" "rsync" "ninja-build" "gettext" "cmake" "clang-devel")
 
 for x in "${apps[@]}"; do
     sudo dnf install "$x" -y

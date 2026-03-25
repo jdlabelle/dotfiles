@@ -5,7 +5,7 @@ set -ex
 
 sudo pacman -Syu --noconfirm
 
-apps=("vim" "man" "tree" "wget" "git" "xclip" "ripgrep" "make" "tmux" "shellcheck" "curl" "file" "rsync" "gettext")
+apps=("vim" "man" "tree" "wget" "git" "xclip" "ripgrep" "make" "tmux" "shellcheck" "curl" "file" "rsync" "gettext" "clang")
 
 for x in "${apps[@]}"; do
     sudo pacman -S "$x" --noconfirm
@@ -23,7 +23,7 @@ done
 #    && sudo apt install gh -y
 
 # Install stable Neovim from the AUR
-yay -S neovim-git 
+yay -S neovim-git
 
 # Install the Lua Language Server (will need to update to latest version)
 cd ~/Downloads
